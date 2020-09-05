@@ -9,8 +9,8 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:@typescript-eslint/recommended',
     'prettier/@typescript-eslint',
-    // 'plugin:prettier/recommended',
-    'airbnb',
+    'airbnb/hooks',
+    'airbnb-typescript',
   ],
   settings: {
     react: {
