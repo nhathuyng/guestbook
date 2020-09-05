@@ -1,19 +1,16 @@
 import React from 'react';
-import { Switch, Route, Redirect, Link } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import NavBar from './components/organisms/NavBar/NavBar';
+import Home from './components/pages/Home';
+import About from './components/pages/About';
 
 function App() {
   return (
     <div className="App">
       <NavBar />
-      <div>
-        <Link to="/">Home Page</Link>
-        <span> | </span>
-        <Link to="/about">About Page</Link>
-      </div>
       <Switch>
-        <Route exact path="/" />
-        <Route exact path="/about" />
+        <Route exact path="/" component={Home} />
+        <Route exact path="/about" component={About} />
         <Redirect to="/" />
       </Switch>
     </div>
