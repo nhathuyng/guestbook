@@ -19,14 +19,6 @@ const NavBar: React.FC<NavBarProps> = ({}): JSX.Element => {
     <div className={classes.root}>
       <AppBar position="static" color="transparent" elevation={0}>
         <Toolbar>
-          <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="menu"
-          >
-            <MenuIcon />
-          </IconButton>
           <Typography className={classes.title} variant="h6">
             GuestBook
           </Typography>

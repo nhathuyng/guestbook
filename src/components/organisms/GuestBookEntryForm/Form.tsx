@@ -5,6 +5,8 @@ import { useForm } from 'react-hook-form';
 import { GuestBookEntry } from '../../../interfaces';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers';
+import { addEntry } from '../../../store/GBslice';
+import { useSelector, useDispatch } from 'react-redux';
 
 const GuestBookEntrySchema = yup.object().shape({
   name: yup.string().trim().required('Required.'),
@@ -20,12 +22,15 @@ interface FormProps {}
 
 const Form: React.FC<FormProps> = ({}) => {
   const classes = useStyles();
-  const { register, handleSubmit, errors } = useForm<GuestBookEntry>({
+  const dispatch = useDispatch();
+  const { register, handleSubmit, errors, reset } = useForm<GuestBookEntry>({
     resolver: yupResolver(GuestBookEntrySchema),
   });
 
   const onSubmit = (data: GuestBookEntry): void => {
     console.log(data);
+    dispatch(addEntry(data));
+    reset();
   };
 
   console.log(errors);
