@@ -1,7 +1,7 @@
 export interface GuestBookEntry {
   name: string;
   content: string;
-  submitted: Date;
+  submitted?: Date;
 }
 
 export interface GuestBookList {
